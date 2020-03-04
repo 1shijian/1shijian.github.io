@@ -120,6 +120,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-Day-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/04/Python-Day-4/">Python Day 4</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/04/Python-Day-4/" class="archive-article-date">
+  	<time datetime="2020-03-04T09:08:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-4（4-100）"><a href="#Python-4（4-100）" class="headerlink" title="Python 4（4/100）"></a>Python 4（4/100）</h1><h2 id="函数-和-模块"><a href="#函数-和-模块" class="headerlink" title="函数 和 模块"></a>函数 和 模块</h2><h3 id="函数：自认为函数的作用就是把结构类似的代码块用函数来替代，在用到这个功能或者作用的时候直接调用函数即可。如果一个from文件里面有两个函数是一个名字则调用的时候后面会覆盖前面的函数输出。"><a href="#函数：自认为函数的作用就是把结构类似的代码块用函数来替代，在用到这个功能或者作用的时候直接调用函数即可。如果一个from文件里面有两个函数是一个名字则调用的时候后面会覆盖前面的函数输出。" class="headerlink" title="函数：自认为函数的作用就是把结构类似的代码块用函数来替代，在用到这个功能或者作用的时候直接调用函数即可。如果一个from文件里面有两个函数是一个名字则调用的时候后面会覆盖前面的函数输出。"></a>函数：自认为函数的作用就是把结构类似的代码块用函数来替代，在用到这个功能或者作用的时候直接调用函数即可。如果一个from文件里面有两个函数是一个名字则调用的时候后面会覆盖前面的函数输出。</h3><h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><p><code>def 函数名称（形式参数）</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">roll_dice</span><span class="params">(i = <span class="number">2</span>)</span>:</span> <span class="comment">##骰子</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    total1 = <span class="number">0</span></span><br><span class="line">    total2 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range (i):</span><br><span class="line">        total += randint(<span class="number">1</span>,<span class="number">6</span>)</span><br><span class="line">    <span class="keyword">return</span> total</span><br><span class="line"><span class="comment">#默认两颗骰子</span></span><br><span class="line">print(roll_dice())</span><br><span class="line"><span class="comment"># 摇三颗色子</span></span><br><span class="line">print(roll_dice(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>如果我们可以用<code>from文件imoprt函数名</code>来导入文件中的函数，使用的时候就可以</p>
+<p><code>文件名.函数名</code></p>
+<p><code>module1.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'hello, world!'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>module2.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'goodbye, world!'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>test.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module1 <span class="keyword">import</span> foo</span><br><span class="line">foo()</span><br><span class="line"><span class="keyword">from</span> module2 <span class="keyword">import</span> foo</span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
+
+<p><code>test.py</code><br>两个一起导入执行最后的导入的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module1 <span class="keyword">import</span> foo</span><br><span class="line"><span class="keyword">from</span> module2 <span class="keyword">import</span> foo</span><br><span class="line">foo()</span><br><span class="line"><span class="comment"># 输出goodbye, world!</span></span><br></pre></td></tr></table></figure>
+
+<p><code>test.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> module1 <span class="keyword">as</span> m1</span><br><span class="line"><span class="keyword">import</span> module2 <span class="keyword">as</span> m2</span><br><span class="line"></span><br><span class="line">m1.foo()</span><br><span class="line">m2.foo()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="if-name-39-main-39"><a href="#if-name-39-main-39" class="headerlink" title="if __name__ == &#39;__main__&#39;"></a><code>if __name__ == &#39;__main__&#39;</code></h2><p> 只有被Python解释器直接执行的模块的名字才是<code>__main__</code></p>
+<p>导入中含有的不可以执行</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/04/Python-Day-4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python-Day-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
