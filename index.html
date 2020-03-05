@@ -120,6 +120,172 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-Day-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/Python-Day-5/">Python Day 5</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/Python-Day-5/" class="archive-article-date">
+  	<time datetime="2020-03-05T05:54:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-5-5-100"><a href="#Python-5-5-100" class="headerlink" title="Python 5 (5/100)"></a>Python 5 (5/100)</h1><blockquote>
+<p>世界上第一台电子计算机叫ENIAC（电子数值积分计算机），诞生于美国法尼亚大学，每秒5000次浮点运算。</p>
+</blockquote>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h4 id="字符串就是使用单引号-39-双引号-39-39-三引号-39-39-39-包起来的0个或者多个字符"><a href="#字符串就是使用单引号-39-双引号-39-39-三引号-39-39-39-包起来的0个或者多个字符" class="headerlink" title="字符串就是使用单引号&#39;双引号&#39;&#39;三引号&#39;&#39;&#39;包起来的0个或者多个字符"></a>字符串就是使用单引号<code>&#39;</code>双引号<code>&#39;&#39;</code>三引号<code>&#39;&#39;&#39;</code>包起来的0个或者多个字符</h4><h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><h4 id="字符串中使用-来表示转义字符，-可以用来代表8进制或者16进制的数据，还可以代表字符，换行，制表，也可以在-后面跟Unicode字符编码来代表文字"><a href="#字符串中使用-来表示转义字符，-可以用来代表8进制或者16进制的数据，还可以代表字符，换行，制表，也可以在-后面跟Unicode字符编码来代表文字" class="headerlink" title="字符串中使用\来表示转义字符，\可以用来代表8进制或者16进制的数据，还可以代表字符，换行，制表，也可以在\后面跟Unicode字符编码来代表文字"></a>字符串中使用<code>\</code>来表示转义字符，<code>\</code>可以用来代表8进制或者16进制的数据，还可以代表字符，换行，制表，也可以在<code>\</code>后面跟<code>Unicode</code>字符编码来代表文字</h4><p>Python还有各式各样的字符串运算符</p>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th>操作</th>
+<th>输入</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">*</td>
+<td>重复一个字符串</td>
+<td>‘hello ‘ * 3</td>
+<td>hello hello hello</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td>字符串的拼接</td>
+<td>’hello‘+’world‘</td>
+<td>helloworld</td>
+</tr>
+<tr>
+<td align="left">in   <br />not in</td>
+<td>查看一个字符串是不是是另一个字符串的子串</td>
+<td>’ll‘  in  ‘hello’</td>
+<td>True</td>
+</tr>
+<tr>
+<td align="left"><code>[]</code></td>
+<td>当里面只有一个参数时，输出单个字符</td>
+<td>a=”hello”</td>
+<td>a[0] = “h”</td>
+</tr>
+<tr>
+<td align="left"><code>[开始:结束:步长]</code></td>
+<td>截取字符串,</td>
+<td>a[0:2]</td>
+<td>“he”</td>
+</tr>
+</tbody></table>
+<h2 id="字符串的输出"><a href="#字符串的输出" class="headerlink" title="字符串的输出"></a>字符串的输出</h2><h4 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">5</span>, <span class="number">10</span></span><br><span class="line">print(<span class="string">'%d * %d = %d'</span> % (a, b, a * b))</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串提供的方法来输出"><a href="#字符串提供的方法来输出" class="headerlink" title="字符串提供的方法来输出"></a>字符串提供的方法来输出</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">5</span>, <span class="number">10</span></span><br><span class="line">print(<span class="string">'&#123;0&#125; * &#123;1&#125; = &#123;2&#125;'</span>.format(a,b,a*b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">5</span>, <span class="number">10</span></span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;a&#125;</span> * <span class="subst">&#123;b&#125;</span> = <span class="subst">&#123;a*b&#125;</span>'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="列表中的每个值都可以通过下标来访问，定义列表可以寄将列表的元素放在-中，可以使用for来进行遍历，也可以使用-或-取出列表中的一个或多个元素。"><a href="#列表中的每个值都可以通过下标来访问，定义列表可以寄将列表的元素放在-中，可以使用for来进行遍历，也可以使用-或-取出列表中的一个或多个元素。" class="headerlink" title="列表中的每个值都可以通过下标来访问，定义列表可以寄将列表的元素放在[]中，可以使用for来进行遍历，也可以使用[]或[:]取出列表中的一个或多个元素。"></a>列表中的每个值都可以通过下标来访问，定义列表可以寄将列表的元素放在<code>[]</code>中，可以使用<code>for</code>来进行遍历，也可以使用<code>[]</code>或<code>[:]</code>取出列表中的一个或多个元素。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="comment">#定义列表</span></span><br><span class="line">list2 = [<span class="string">"hello"</span>]*<span class="number">3</span></span><br><span class="line"><span class="comment">## ["hello", "hello", "hello"]</span></span><br><span class="line">print(len(list1))</span><br><span class="line"><span class="comment">## 4</span></span><br><span class="line">print(list1[<span class="number">0</span>])</span><br><span class="line"><span class="comment">## 1         从零开始正负都可以</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 遍历数组</span></span><br><span class="line">print(list1)</span><br><span class="line"><span class="comment">##  [1,2,3,4]</span></span><br><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> range(len(list1)):</span><br><span class="line">    print(list1[idnex])</span><br><span class="line"><span class="comment">## 通过下标</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> elem <span class="keyword">in</span> list1:</span><br><span class="line">    print(elem)</span><br><span class="line"><span class="comment">## 通过for···in··遍历元素</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="enumerate方法可以获取索引和索引值"><a href="#enumerate方法可以获取索引和索引值" class="headerlink" title="enumerate方法可以获取索引和索引值"></a>enumerate方法可以获取索引和索引值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index,elem <span class="keyword">in</span> enumerate(list1)</span><br><span class="line">	print(index,elem)</span><br><span class="line"><span class="comment">## 通过使用enumerate方法来获得索引的值和索引</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h3><p>list1 = [1, 3, 5, 7, 100]</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>输入</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>list1.append(num)</code></td>
+<td>在末尾添加<code>num</code>元素</td>
+<td><code>list1.append(200)</code></td>
+<td>[1,3,5,7,100,200]</td>
+</tr>
+<tr>
+<td><code>list1.insert(index,num)</code></td>
+<td>在index位置后插入<code>num</code>元素</td>
+<td><code>list1.insert(1, 400)</code></td>
+<td>[1,400,3,5,7,100]</td>
+</tr>
+<tr>
+<td><code>list1.extend(list2)</code></td>
+<td>合并<code>list1</code>和<code>list2</code></td>
+<td><code>list1.extend([200])</code></td>
+<td>[1,3,5,7,100,200]</td>
+</tr>
+<tr>
+<td><code>list1.remove(num)</code></td>
+<td>删除列表中等于<code>num</code>的值</td>
+<td><code>list1.remove(100)</code></td>
+<td>[1,3,5,7]</td>
+</tr>
+<tr>
+<td><code>list1.pop(index)</code></td>
+<td>删除列表中下标等于<code>index</code>的值</td>
+<td><code>list1.pop(3)</code></td>
+<td>[1,3,5,100]</td>
+</tr>
+</tbody></table>
+<h3 id="列表切片"><a href="#列表切片" class="headerlink" title="列表切片"></a>列表切片</h3><p>可以使用列表切片来进行复制    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">'grape'</span>, <span class="string">'apple'</span>, <span class="string">'strawberry'</span>, <span class="string">'waxberry'</span>]</span><br><span class="line"></span><br><span class="line">fruits += [<span class="string">'pitaya'</span>, <span class="string">'pear'</span>, <span class="string">'mango'</span>]</span><br><span class="line"><span class="comment"># 列表切片</span></span><br><span class="line"></span><br><span class="line">fruits2 = fruits[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line"><span class="comment"># apple strawberry waxberry</span></span><br><span class="line"></span><br><span class="line">fruits3 = fruits[:]</span><br><span class="line"><span class="comment"># 这俩一样</span></span><br><span class="line">fruits3 = fruits</span><br><span class="line"><span class="comment"># ['grape', 'apple', 'strawberry', 'waxberry', 'pitaya', 'pear', 'mango']</span></span><br><span class="line"></span><br><span class="line">fruits4 = fruits[<span class="number">-3</span>:<span class="number">-1</span>]</span><br><span class="line"><span class="comment"># ['pitaya', 'pear']</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以通过反向切片操作来获得倒转后的列表的拷贝</span></span><br><span class="line">fruits5 = fruits[::<span class="number">-1</span>]</span><br><span class="line">print(fruits5) </span><br><span class="line"><span class="comment"># ['mango', 'pear', 'pitaya', 'waxberry', 'strawberry', 'apple', 'grape']</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="列表排序"><a href="#列表排序" class="headerlink" title="列表排序"></a>列表排序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">3</span>,<span class="number">46</span>,<span class="number">4</span>]</span><br><span class="line">list2 = sorted(list1)</span><br><span class="line"><span class="comment">## 升序</span></span><br><span class="line">list3 = sorten(list1,reverse = <span class="literal">True</span>)</span><br><span class="line"><span class="comment">## 降序</span></span><br><span class="line">list4 = sorten(list1,key=len)</span><br><span class="line"><span class="comment">## 按照长度排序</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="生成式和生成器"><a href="#生成式和生成器" class="headerlink" title="生成式和生成器"></a>生成式和生成器</h3><p>列表生成器来生成列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>)]</span><br><span class="line"><span class="comment">## [1,2,3,4,5,6,7,8,9]</span></span><br><span class="line"></span><br><span class="line">f = [x+y <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">"ABCD"</span> <span class="keyword">for</span> y <span class="keyword">in</span> <span class="string">"1234"</span>]</span><br><span class="line"><span class="comment">##  ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'B3', 'B4', 'C1', 'C2', 'C3', 'C4', 'D1', 'D2', 'D3', 'D4']</span></span><br></pre></td></tr></table></figure>
+
+<p>或者通过yield关键字将一个普通函数改造成生成器函数，</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/Python-Day-5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python-Day-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
