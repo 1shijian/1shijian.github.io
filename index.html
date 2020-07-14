@@ -120,27 +120,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Python-Day-9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Python-Day-10-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/18/Python-Day-9/">Python Day 9</a>
+      <a class="article-title" href="/2020/07/14/Python-Day-10-1/">Python-Day-10</a>
     </h1>
   
 
         
-        <a href="/2020/03/18/Python-Day-9/" class="archive-article-date">
-  	<time datetime="2020-03-18T00:26:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
+        <a href="/2020/07/14/Python-Day-10-1/" class="archive-article-date">
+  	<time datetime="2020-07-14T11:09:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1>
+        
       
 
       
@@ -152,400 +152,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/18/Python-Day-9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-Day-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/09/Python-Day-8/">Python Day 8</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/09/Python-Day-8/" class="archive-article-date">
-  	<time datetime="2020-03-09T13:14:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="字符串和re"><a href="#字符串和re" class="headerlink" title="字符串和re"></a>字符串和re</h1><p>re又称正则表达式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>解释</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>.</td>
-<td>匹配任意字符</td>
-<td>b.t</td>
-<td>可以匹配bat / but / b#t / b1t等</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母/数字/下划线</td>
-<td>b\wt</td>
-<td>可以匹配bat / b1t / b_t等<br>但不能匹配b#t</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>匹配空白字符（包括\r、\n、\t等）</td>
-<td>love\syou</td>
-<td>可以匹配love you</td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字</td>
-<td>\d\d</td>
-<td>可以匹配01 / 23 / 99等</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配单词的边界</td>
-<td>\bThe\b</td>
-<td></td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配字符串的开始</td>
-<td>^The</td>
-<td>可以匹配The开头的字符串</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串的结束</td>
-<td>.exe$</td>
-<td>可以匹配.exe结尾的字符串</td>
-</tr>
-<tr>
-<td>\W</td>
-<td>匹配非字母/数字/下划线</td>
-<td>b\Wt</td>
-<td>可以匹配b#t / b@t等<br>但不能匹配but / b1t / b_t等</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>匹配非空白字符</td>
-<td>love\Syou</td>
-<td>可以匹配love#you等<br>但不能匹配love you</td>
-</tr>
-<tr>
-<td>\D</td>
-<td>匹配非数字</td>
-<td>\d\D</td>
-<td>可以匹配9a / 3# / 0F等</td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配非单词边界</td>
-<td>\Bio\B</td>
-<td></td>
-</tr>
-<tr>
-<td>[]</td>
-<td>匹配来自字符集的任意单一字符</td>
-<td>[aeiou]</td>
-<td>可以匹配任一元音字母字符</td>
-</tr>
-<tr>
-<td>[^]</td>
-<td>匹配不在字符集中的任意单一字符</td>
-<td>[^aeiou]</td>
-<td>可以匹配任一非元音字母字符</td>
-</tr>
-<tr>
-<td>*</td>
-<td>匹配0次或多次</td>
-<td>\w*</td>
-<td></td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配1次或多次</td>
-<td>\w+</td>
-<td></td>
-</tr>
-<tr>
-<td>?</td>
-<td>匹配0次或1次</td>
-<td>\w?</td>
-<td></td>
-</tr>
-<tr>
-<td>{N}</td>
-<td>匹配N次</td>
-<td>\w{3}</td>
-<td></td>
-</tr>
-<tr>
-<td>{M,}</td>
-<td>匹配至少M次</td>
-<td>\w{3,}</td>
-<td></td>
-</tr>
-<tr>
-<td>{M,N}</td>
-<td>匹配至少M次至多N次</td>
-<td>\w{3,6}</td>
-<td></td>
-</tr>
-<tr>
-<td>|</td>
-<td>分支</td>
-<td>foo|bar</td>
-<td>可以匹配foo或者bar</td>
-</tr>
-<tr>
-<td>(?#)</td>
-<td>注释</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>(exp)</td>
-<td>匹配exp并捕获到自动命名的组中</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>(?&nbsp;&lt;name&gt;exp)</td>
-<td>匹配exp并捕获到名为name的组中</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>(?:exp)</td>
-<td>匹配exp但是不捕获匹配的文本</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>(?=exp)</td>
-<td>匹配exp前面的位置</td>
-<td>\b\w+(?=ing)</td>
-<td>可以匹配I’m dancing中的danc</td>
-</tr>
-<tr>
-<td>(?&lt;=exp)</td>
-<td>匹配exp后面的位置</td>
-<td>(?&lt;=\bdanc)\w+\b</td>
-<td>可以匹配I love dancing and reading中的第一个ing</td>
-</tr>
-<tr>
-<td>(?!exp)</td>
-<td>匹配后面不是exp的位置</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>(?&lt;!exp)</td>
-<td>匹配前面不是exp的位置</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>*?</td>
-<td>重复任意次，但尽可能少重复</td>
-<td>a.*b<br>a.*?b</td>
-<td>将正则表达式应用于aabab，前者会匹配整个字符串aabab，后者会匹配aab和ab两个字符串</td>
-</tr>
-<tr>
-<td>+?</td>
-<td>重复1次或多次，但尽可能少重复</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>??</td>
-<td>重复0次或1次，但尽可能少重复</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>{M,N}?</td>
-<td>重复M到N次，但尽可能少重复</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>{M,}?</td>
-<td>重复M次以上，但尽可能少重复</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>《正则表达式30分钟入门教程》](<a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">https://deerchao.net/tutorials/regex/regex.htm</a>)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/09/Python-Day-8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-Day-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/08/Python-Day-7/">Python Day 7</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/08/Python-Day-7/" class="archive-article-date">
-  	<time datetime="2020-03-08T06:43:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="文件和异常"><a href="#文件和异常" class="headerlink" title="文件和异常"></a>文件和异常</h1><p>在python中有内置open函数，我们可以指定文件名，操作模式，编码信息等来操作文件的对象。</p>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>读取文本为文件时，需要使用<code>open</code>函数指定好带路径的文件名（可以使用相对路径或绝对路径）文件模式设置默认是r，设定<code>encoding</code>字符编码例如（“utf-8”）</p>
-<p><code>open(“文件路径”,“文件模式”,&quot;encoding&quot;)</code></p>
-<p>文件模式：</p>
-<table>
-<thead>
-<tr>
-<th>操作模式</th>
-<th>具体含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>‘r’</td>
-<td>读取文件（默认）</td>
-</tr>
-<tr>
-<td>‘w’</td>
-<td>写入文件（会截断之前的内容）</td>
-</tr>
-<tr>
-<td>‘x’</td>
-<td>写入，如果文件已经存在则会产生异常</td>
-</tr>
-<tr>
-<td>‘a’</td>
-<td>追加文件，将内容写入到已有文件末尾</td>
-</tr>
-<tr>
-<td>‘b’</td>
-<td>二进制模式</td>
-</tr>
-<tr>
-<td>‘t’</td>
-<td>文本模式（默认）</td>
-</tr>
-<tr>
-<td>‘+’</td>
-<td>更新（可读可写）</td>
-</tr>
-</tbody></table>
-<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>我们可以将运行的代码块放在<code>try</code>中，在<code>try</code>后面跟上一个或者多个<code>except</code>，<code>finally</code>放在最好结束</p>
-<p><code>with</code>关键字会指定的文件对象会在上下文环境，并且在离开上下文环境的时候自动释放资源</p>
-<h3 id="读写文本文件"><a href="#读写文本文件" class="headerlink" title="读写文本文件"></a>读写文本文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>,t,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">print(f.read())</span><br><span class="line"><span class="comment">#一次性读取整个文件</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">	print(line,end=<span class="string">' '</span>)</span><br><span class="line">	time.sleep(<span class="number">0.5</span>)</span><br><span class="line"><span class="comment">#通过for-in循环逐行读取</span></span><br><span class="line"></span><br><span class="line">lines = f.readlines()</span><br><span class="line">print(lines)</span><br><span class="line"><span class="comment">#读取文件按行读取到列表中</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="读写二进制文件"><a href="#读写二进制文件" class="headerlink" title="读写二进制文件"></a>读写二进制文件</h3> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"a.jpg"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> fs1:</span><br><span class="line">data = fs1.read()</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'b.jpg'</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> fs2:</span><br><span class="line">fs2.write(data)</span><br><span class="line"><span class="comment"># 将a图片复制到b</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="读写JSON文件"><a href="#读写JSON文件" class="headerlink" title="读写JSON文件"></a>读写JSON文件</h3><p>需要到第三方库 <code>import json</code> 所谓json文件格式就是所有数据类型都可以兼容，str，int/float，bool，dict，定义的时候和字典定义一样。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">mydict =&#123;</span><br><span class="line"><span class="string">'name'</span>:<span class="string">'wuhao'</span>,</span><br><span class="line"><span class="string">'age'</span>:<span class="number">38</span>,</span><br><span class="line"><span class="string">'friends'</span>:[<span class="string">'wdc'</span>,<span class="string">'wxc'</span>]</span><br><span class="line"><span class="string">'cars'</span>:[</span><br><span class="line">	&#123;<span class="string">'brand'</span>:<span class="string">'aaa'</span>,<span class="string">'ccc'</span>:<span class="number">1800</span>&#125;</span><br><span class="line">	&#123;<span class="string">'brand'</span>:<span class="string">'aaa'</span>,<span class="string">'ccc'</span>:<span class="number">1800</span>&#125;</span><br><span class="line">	&#123;<span class="string">'brand'</span>:<span class="string">'aaa'</span>,<span class="string">'ccc'</span>:<span class="number">1800</span>&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="keyword">with</span> open(<span class="string">'data.json'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> fs:</span><br><span class="line">		json.dump(mydict,fs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 吧json数据类型保存到文件里面</span></span><br></pre></td></tr></table></figure>
-
-<p><code>json</code>模块主要有四个函数：</p>
-<ul>
-<li><code>dump</code>-将Python对象按章json格式序列存到文件中</li>
-<li><code>dumps</code> - 将Python对象处理成json格式的字符串</li>
-<li><code>load</code> - 将文件中的json数据反序列化成兑现</li>
-<li><code>loads</code> - 将字符串的内容反序列化为Python对象</li>
-</ul>
-<p>序列化：将数据和对象转换成存储和传输的i形式，而且调用的时候会产生副本。反序列化就是与这个相反</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/08/Python-Day-7/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/07/14/Python-Day-10-1/">展开全文 >></a>
         </p>
       
 
@@ -655,596 +262,6 @@
 
 
   
-    <article id="post-Python-Day-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/05/Python-Day-5/">Python Day 5</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/05/Python-Day-5/" class="archive-article-date">
-  	<time datetime="2020-03-05T05:54:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Python-5-5-100"><a href="#Python-5-5-100" class="headerlink" title="Python 5 (5/100)"></a>Python 5 (5/100)</h1><blockquote>
-<p>世界上第一台电子计算机叫ENIAC（电子数值积分计算机），诞生于美国法尼亚大学，每秒5000次浮点运算。</p>
-</blockquote>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串就是使用单引号<code>&#39;</code>双引号<code>&#39;&#39;</code>三引号<code>&#39;&#39;&#39;</code>包起来的0个或者多个字符</p>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>字符串中使用<code>\</code>来表示转义字符，<code>\</code>可以用来代表8进制或者16进制的数据，还可以代表字符，换行，制表，也可以在<code>\</code>后面跟<code>Unicode</code>字符编码来代表文字</p>
-<p>Python还有各式各样的字符串运算符</p>
-<table>
-<thead>
-<tr>
-<th align="left">运算符</th>
-<th>操作</th>
-<th>输入</th>
-<th>输出</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">*</td>
-<td>重复一个字符串</td>
-<td>‘hello ‘ * 3</td>
-<td>hello hello hello</td>
-</tr>
-<tr>
-<td align="left">+</td>
-<td>字符串的拼接</td>
-<td>’hello‘+’world‘</td>
-<td>helloworld</td>
-</tr>
-<tr>
-<td align="left">in   <br />not in</td>
-<td>查看一个字符串是不是是另一个字符串的子串</td>
-<td>’ll‘  in  ‘hello’</td>
-<td>True</td>
-</tr>
-<tr>
-<td align="left"><code>[]</code></td>
-<td>当里面只有一个参数时，输出单个字符</td>
-<td>a=”hello”</td>
-<td>a[0] = “h”</td>
-</tr>
-<tr>
-<td align="left"><code>[开始:结束:步长]</code></td>
-<td>截取字符串,</td>
-<td>a[0:2]</td>
-<td>“he”</td>
-</tr>
-</tbody></table>
-<h2 id="字符串的输出"><a href="#字符串的输出" class="headerlink" title="字符串的输出"></a>字符串的输出</h2><h4 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">5</span>, <span class="number">10</span></span><br><span class="line">print(<span class="string">'%d * %d = %d'</span> % (a, b, a * b))</span><br></pre></td></tr></table></figure>
-
-<h4 id="字符串提供的方法来输出"><a href="#字符串提供的方法来输出" class="headerlink" title="字符串提供的方法来输出"></a>字符串提供的方法来输出</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">5</span>, <span class="number">10</span></span><br><span class="line">print(<span class="string">'&#123;0&#125; * &#123;1&#125; = &#123;2&#125;'</span>.format(a,b,a*b))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="number">5</span>, <span class="number">10</span></span><br><span class="line">print(<span class="string">f'<span class="subst">&#123;a&#125;</span> * <span class="subst">&#123;b&#125;</span> = <span class="subst">&#123;a*b&#125;</span>'</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表中的每个值都可以通过下标来访问，定义列表可以寄将列表的元素放在<code>[]</code>中，可以使用<code>for</code>来进行遍历，也可以使用<code>[]</code>或<code>[:]</code>取出列表中的一个或多个元素。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="comment">#定义列表</span></span><br><span class="line">list2 = [<span class="string">"hello"</span>]*<span class="number">3</span></span><br><span class="line"><span class="comment">## ["hello", "hello", "hello"]</span></span><br><span class="line">print(len(list1))</span><br><span class="line"><span class="comment">## 4</span></span><br><span class="line">print(list1[<span class="number">0</span>])</span><br><span class="line"><span class="comment">## 1         从零开始正负都可以</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 遍历数组</span></span><br><span class="line">print(list1)</span><br><span class="line"><span class="comment">##  [1,2,3,4]</span></span><br><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> range(len(list1)):</span><br><span class="line">    print(list1[idnex])</span><br><span class="line"><span class="comment">## 通过下标</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> elem <span class="keyword">in</span> list1:</span><br><span class="line">    print(elem)</span><br><span class="line"><span class="comment">## 通过for···in··遍历元素</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="enumerate方法可以获取索引和索引值"><a href="#enumerate方法可以获取索引和索引值" class="headerlink" title="enumerate方法可以获取索引和索引值"></a>enumerate方法可以获取索引和索引值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index,elem <span class="keyword">in</span> enumerate(list1)</span><br><span class="line">	print(index,elem)</span><br><span class="line"><span class="comment">## 通过使用enumerate方法来获得索引的值和索引</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h3><p><code>list1 = [1, 3, 5, 7, 100]</code></p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-<th>输入</th>
-<th>输出</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>list.append(num)</code></td>
-<td>在末尾添加<code>num</code>元素</td>
-<td><code>list1.append(200)</code></td>
-<td>[1,3,5,7,100,200]</td>
-</tr>
-<tr>
-<td><code>list.insert(index,num)</code></td>
-<td>在index位置后插入<code>num</code>元素</td>
-<td><code>list1.insert(1, 400)</code></td>
-<td>[1,400,3,5,7,100]</td>
-</tr>
-<tr>
-<td><code>list.extend(list2)</code></td>
-<td>合并<code>list1</code>和<code>list2</code></td>
-<td><code>list1.extend([200])</code></td>
-<td>[1,3,5,7,100,200]</td>
-</tr>
-<tr>
-<td><code>list.remove(num)</code></td>
-<td>删除列表中等于<code>num</code>的值</td>
-<td><code>list1.remove(100)</code></td>
-<td>[1,3,5,7]</td>
-</tr>
-<tr>
-<td><code>list.pop(index)</code></td>
-<td>删除列表中下标等于<code>index</code>的值</td>
-<td><code>list1.pop(3)</code></td>
-<td>[1,3,5,100]</td>
-</tr>
-</tbody></table>
-<h3 id="列表切片"><a href="#列表切片" class="headerlink" title="列表切片"></a>列表切片</h3><p>可以使用列表切片来进行复制    </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">'grape'</span>, <span class="string">'apple'</span>, <span class="string">'strawberry'</span>, <span class="string">'waxberry'</span>]</span><br><span class="line"></span><br><span class="line">fruits += [<span class="string">'pitaya'</span>, <span class="string">'pear'</span>, <span class="string">'mango'</span>]</span><br><span class="line"><span class="comment"># 列表切片</span></span><br><span class="line"></span><br><span class="line">fruits2 = fruits[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line"><span class="comment"># apple strawberry waxberry</span></span><br><span class="line"></span><br><span class="line">fruits3 = fruits[:]</span><br><span class="line"><span class="comment"># 这俩一样</span></span><br><span class="line">fruits3 = fruits</span><br><span class="line"><span class="comment"># ['grape', 'apple', 'strawberry', 'waxberry', 'pitaya', 'pear', 'mango']</span></span><br><span class="line"></span><br><span class="line">fruits4 = fruits[<span class="number">-3</span>:<span class="number">-1</span>]</span><br><span class="line"><span class="comment"># ['pitaya', 'pear']</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以通过反向切片操作来获得倒转后的列表的拷贝</span></span><br><span class="line">fruits5 = fruits[::<span class="number">-1</span>]</span><br><span class="line">print(fruits5) </span><br><span class="line"><span class="comment"># ['mango', 'pear', 'pitaya', 'waxberry', 'strawberry', 'apple', 'grape']</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="列表排序"><a href="#列表排序" class="headerlink" title="列表排序"></a>列表排序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">3</span>,<span class="number">46</span>,<span class="number">4</span>]</span><br><span class="line">list2 = sorted(list1)</span><br><span class="line"><span class="comment">## 升序</span></span><br><span class="line">list3 = sorten(list1,reverse = <span class="literal">True</span>)</span><br><span class="line"><span class="comment">## 降序</span></span><br><span class="line">list4 = sorten(list1,key=len)</span><br><span class="line"><span class="comment">## 按照长度排序</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="生成式和生成器"><a href="#生成式和生成器" class="headerlink" title="生成式和生成器"></a>生成式和生成器</h3><p>列表生成器来生成列表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>)]</span><br><span class="line"><span class="comment">## [1,2,3,4,5,6,7,8,9]</span></span><br><span class="line"></span><br><span class="line">f = [x+y <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">"ABCD"</span> <span class="keyword">for</span> y <span class="keyword">in</span> <span class="string">"1234"</span>]</span><br><span class="line"><span class="comment">##  ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'B3', 'B4', 'C1', 'C2', 'C3', 'C4', 'D1', 'D2', 'D3', 'D4']</span></span><br></pre></td></tr></table></figure>
-
-<p>或者通过<code>yield</code>关键字将一个普通函数改造成生成器函数</p>
-<p>带<code>yield</code>是一个真正的迭代器，用法和<code>return</code>一致他会在使用的时候第一次运行的时候会执行<code>yield</code>前面的语句结束，当你使用<code>next()</code>函数时会继续执行<code>yield</code>之后的代码。</p>
-<h2 id="使用元组"><a href="#使用元组" class="headerlink" title="使用元组"></a>使用元组</h2><p>元组是由<code>（）</code>包含起来的元素，可以使用下标来观看，可以使用<code>for···in··</code>来遍历，不可以单个更改，只能重新赋值，可以使用<code>list()</code>函数来转换成列表.</p>
-<p>如果不需要更改数据，和返回一个或者多个值的时候可以使用元组，元组占用空间回比列表小。</p>
-<h2 id="使用集合"><a href="#使用集合" class="headerlink" title="使用集合"></a>使用集合</h2><p>集合使用<code>{}</code>构成的可以使用生成器来使用可以用set()函数来进行转化</p>
-<p><code>set1 = {1,2,3}</code></p>
-<p><code>set2 = {2,3,4}</code></p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>描述</th>
-<th>输入</th>
-<th>输出</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>set.add(num)</code></td>
-<td>添加<code>num</code>元素</td>
-<td><code>set1.add(4)</code></td>
-<td>{1,2,3,4}</td>
-</tr>
-<tr>
-<td><code>set.update(list)</code></td>
-<td>添加列表中的元素</td>
-<td><code>set1.update([5,6])</code></td>
-<td>{1,2,3,5,6}</td>
-</tr>
-<tr>
-<td><code>set.discard(num)</code></td>
-<td>删除<code>num</code>值,</td>
-<td><code>set1.discarf(1)</code></td>
-<td>{2,3}</td>
-</tr>
-<tr>
-<td><code>set.remove(num)</code></td>
-<td>删除<code>num</code>值</td>
-<td><code>set1.remove(2)</code></td>
-<td>{1,3}</td>
-</tr>
-<tr>
-<td><code>set.pop()</code></td>
-<td>移除表头元素</td>
-<td><code>set1.pop()</code></td>
-<td>{2,3}</td>
-</tr>
-<tr>
-<td>`&amp;</td>
-<td>-   ^`</td>
-<td>交集，并集，差集，对称差</td>
-<td></td>
-</tr>
-</tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">set2 = &#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line">print(set1 &amp; set2)</span><br><span class="line"><span class="comment"># &#123;2,3&#125;</span></span><br><span class="line"></span><br><span class="line">print(set1 | set2)</span><br><span class="line"><span class="comment">#&#123;1, 2, 3, 4&#125;</span></span><br><span class="line"></span><br><span class="line">print(set1 - set2)</span><br><span class="line"><span class="comment">#&#123;1&#125;</span></span><br><span class="line"></span><br><span class="line">print(set1 ^ set2)</span><br><span class="line"><span class="comment">#输出的是俩个元素里不同元素的集合</span></span><br><span class="line"><span class="comment">#&#123;1，4&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="使用字典"><a href="#使用字典" class="headerlink" title="使用字典"></a>使用字典</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建字典</span></span><br><span class="line">scores = &#123;<span class="string">'1'</span>: <span class="number">11</span>,</span><br><span class="line">          <span class="string">'2'</span>: <span class="number">22</span>,</span><br><span class="line">          <span class="string">'3'</span>: <span class="number">33</span>&#125;</span><br><span class="line"><span class="comment"># &#123;'1': 11, '2': 22, '3': 33&#125;</span></span><br><span class="line">scores1 = dict(&#123;one = <span class="number">1</span>,two = <span class="number">2</span>,three = <span class="number">3</span>&#125;)</span><br><span class="line"><span class="comment"># &#123;'one': 1, 'two': 2, 'three': 3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#通过zip()函数来压缩俩个列表</span></span><br><span class="line">scores2 = dict(zip([<span class="number">123</span>],[<span class="number">346</span>]))</span><br><span class="line"><span class="comment">#&#123;123:456&#125;</span></span><br><span class="line"></span><br><span class="line">scores3 = &#123;num:num <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">6</span>)&#125;</span><br><span class="line"><span class="comment"># &#123;0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5&#125;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#通过键可以修改值</span></span><br><span class="line">scores[key] = value</span><br><span class="line">scores.update(key=value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#通过值来输出</span></span><br><span class="line">print(scores[key])</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> scores:</span><br><span class="line">    print(<span class="string">f'<span class="subst">&#123;key&#125;</span>: <span class="subst">&#123;scores[key]&#125;</span>'</span>)</span><br><span class="line">print(scores.get(key)或者scores[key])</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除</span></span><br><span class="line">scores.pop(key:value)</span><br><span class="line"><span class="comment">#删除键值对</span></span><br><span class="line">scores.popitem()</span><br><span class="line"><span class="comment">##删除最后个键值队</span></span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/05/Python-Day-5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-Day-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/Python-Day-4/">Python Day 4</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/Python-Day-4/" class="archive-article-date">
-  	<time datetime="2020-03-04T09:08:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Python-4（4-100）"><a href="#Python-4（4-100）" class="headerlink" title="Python 4（4/100）"></a>Python 4（4/100）</h1><h2 id="函数-和-模块"><a href="#函数-和-模块" class="headerlink" title="函数 和 模块"></a>函数 和 模块</h2><h3 id="函数：自认为函数的作用就是把结构类似的代码块用函数来替代，在用到这个功能或者作用的时候直接调用函数即可。如果一个from文件里面有两个函数是一个名字则调用的时候后面会覆盖前面的函数输出。"><a href="#函数：自认为函数的作用就是把结构类似的代码块用函数来替代，在用到这个功能或者作用的时候直接调用函数即可。如果一个from文件里面有两个函数是一个名字则调用的时候后面会覆盖前面的函数输出。" class="headerlink" title="函数：自认为函数的作用就是把结构类似的代码块用函数来替代，在用到这个功能或者作用的时候直接调用函数即可。如果一个from文件里面有两个函数是一个名字则调用的时候后面会覆盖前面的函数输出。"></a>函数：自认为函数的作用就是把结构类似的代码块用函数来替代，在用到这个功能或者作用的时候直接调用函数即可。如果一个from文件里面有两个函数是一个名字则调用的时候后面会覆盖前面的函数输出。</h3><h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><p><code>def 函数名称（形式参数）</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">roll_dice</span><span class="params">(i = <span class="number">2</span>)</span>:</span> <span class="comment">##骰子</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    total1 = <span class="number">0</span></span><br><span class="line">    total2 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range (i):</span><br><span class="line">        total += randint(<span class="number">1</span>,<span class="number">6</span>)</span><br><span class="line">    <span class="keyword">return</span> total</span><br><span class="line"><span class="comment">#默认两颗骰子</span></span><br><span class="line">print(roll_dice())</span><br><span class="line"><span class="comment"># 摇三颗色子</span></span><br><span class="line">print(roll_dice(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>如果我们可以用<code>from文件imoprt函数名</code>来导入文件中的函数，使用的时候就可以</p>
-<p><code>文件名.函数名</code></p>
-<p><code>module1.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'hello, world!'</span>)</span><br></pre></td></tr></table></figure>
-
-<p><code>module2.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'goodbye, world!'</span>)</span><br></pre></td></tr></table></figure>
-
-<p><code>test.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module1 <span class="keyword">import</span> foo</span><br><span class="line">foo()</span><br><span class="line"><span class="keyword">from</span> module2 <span class="keyword">import</span> foo</span><br><span class="line">foo()</span><br></pre></td></tr></table></figure>
-
-<p><code>test.py</code><br>两个一起导入执行最后的导入的函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module1 <span class="keyword">import</span> foo</span><br><span class="line"><span class="keyword">from</span> module2 <span class="keyword">import</span> foo</span><br><span class="line">foo()</span><br><span class="line"><span class="comment"># 输出goodbye, world!</span></span><br></pre></td></tr></table></figure>
-
-<p><code>test.py</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> module1 <span class="keyword">as</span> m1</span><br><span class="line"><span class="keyword">import</span> module2 <span class="keyword">as</span> m2</span><br><span class="line"></span><br><span class="line">m1.foo()</span><br><span class="line">m2.foo()</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="if-name-39-main-39"><a href="#if-name-39-main-39" class="headerlink" title="if __name__ == &#39;__main__&#39;"></a><code>if __name__ == &#39;__main__&#39;</code></h2><p> 只有被Python解释器直接执行的模块的名字才是<code>__main__</code></p>
-<p>导入中含有的不可以执行</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/Python-Day-4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-Day-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/03/Python-Day-3/">Python Day 3</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/03/Python-Day-3/" class="archive-article-date">
-  	<time datetime="2020-03-03T06:39:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Python-3-3-100"><a href="#Python-3-3-100" class="headerlink" title="Python 3 (3/100)"></a>Python 3 (3/100)</h1><h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><h3 id="if语句-嵌套-if···else-if···elif"><a href="#if语句-嵌套-if···else-if···elif" class="headerlink" title="if语句 嵌套 if···else  if···elif"></a>if语句 嵌套 if···else  if···elif</h3><h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="for···in"><a href="#for···in" class="headerlink" title="for···in"></a>for···in</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum = <span class="number">0</span> </span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">101</span>):</span><br><span class="line">	sum += x</span><br><span class="line">range(开始，结束<span class="number">-1</span>，步长)</span><br></pre></td></tr></table></figure>
-
-<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><h2 id="跳出循环"><a href="#跳出循环" class="headerlink" title="跳出循环"></a>跳出循环</h2><h3 id="break-contiune"><a href="#break-contiune" class="headerlink" title="break contiune"></a>break contiune</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/03/Python-Day-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-Day-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/02/Python-Day-2/">Python Day 2</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/02/Python-Day-2/" class="archive-article-date">
-  	<time datetime="2020-03-02T06:16:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Python-2-2-100"><a href="#Python-2-2-100" class="headerlink" title="Python 2 (2/100)"></a>Python 2 (2/100)</h1><h3 id="变量和类型"><a href="#变量和类型" class="headerlink" title="变量和类型"></a>变量和类型</h3><h4 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h4><p>&emsp;&emsp;整形，浮点型，字符串型，布尔型，复数型，自定义</p>
-<h4 id="变量名称："><a href="#变量名称：" class="headerlink" title="变量名称："></a>变量名称：</h4><p>&emsp;&emsp;除了基础的命名规则在PEP8中有额外的命名规则</p>
-<p>&emsp;&emsp;&emsp;&emsp;1.受保护的实例属性用单个下划线开头</p>
-<p>&emsp;&emsp;&emsp;&emsp;2.私有的实例属性用两个下划线开头</p>
-<h3 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h3><p>&emsp;&emsp;<code>int()</code>：转换成int型可以指定进制</p>
-<p>&emsp;&emsp;<code>float()</code> </p>
-<p>&emsp;&emsp;<code>str()</code>：将目标转转换成字符串形式，可以指定编码 </p>
-<p>&emsp;&emsp;<code>chr()</code>：将整数转换成该编码对应的字符串（单个字符） </p>
-<p>&emsp;&emsp;<code>ord()</code>：将单个字符转换成对应编码</p>
-<h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><p>&emsp;&emsp;&emsp;&emsp;<code>input()</code>：来进行输入数据类型为字符串型</p>
-<p>&emsp;&emsp;&emsp;&emsp;<code>print()</code>：用来进行输出可格式化输出</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'%d + %d = d'</span>a,b,a+b)</span><br></pre></td></tr></table></figure>
-
-<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>[]</code> <code>[:]</code></td>
-<td>下标，切片</td>
-</tr>
-<tr>
-<td><code>**</code></td>
-<td>指数</td>
-</tr>
-<tr>
-<td><code>~</code> <code>+</code> <code>-</code></td>
-<td>按位取反, 正负号</td>
-</tr>
-<tr>
-<td><code>*</code> <code>/</code> <code>%</code> <code>//</code></td>
-<td>乘，除，模，整除</td>
-</tr>
-<tr>
-<td><code>+</code> <code>-</code></td>
-<td>加，减</td>
-</tr>
-<tr>
-<td><code>&gt;&gt;</code> <code>&lt;&lt;</code></td>
-<td>右移，左移</td>
-</tr>
-<tr>
-<td><code>&amp;</code></td>
-<td>按位与</td>
-</tr>
-<tr>
-<td><code>^</code> <code>|</code></td>
-<td>按位异或，按位或</td>
-</tr>
-<tr>
-<td><code>&lt;=</code> <code>&lt;</code> <code>&gt;</code> <code>&gt;=</code></td>
-<td>小于等于，小于，大于，大于等于</td>
-</tr>
-<tr>
-<td><code>==</code> <code>!=</code></td>
-<td>等于，不等于</td>
-</tr>
-<tr>
-<td><code>is</code>  <code>is not</code></td>
-<td>身份运算符（bool）</td>
-</tr>
-<tr>
-<td><code>in</code> <code>not in</code></td>
-<td>成员运算符(bool)</td>
-</tr>
-<tr>
-<td><code>not</code> <code>or</code> <code>and</code></td>
-<td>逻辑运算符(bool)</td>
-</tr>
-<tr>
-<td><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>//=</code> <code>**=</code> <code>&amp;=</code> `</td>
-<td>=<code></code>^=<code></code>&gt;&gt;=<code></code>&lt;&lt;=`</td>
-</tr>
-</tbody></table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/02/Python-Day-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-Day-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/Python-Day-1/">Python Day 1</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/01/Python-Day-1/" class="archive-article-date">
-  	<time datetime="2020-03-01T09:12:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Python-Day-1-1-100"><a href="#Python-Day-1-1-100" class="headerlink" title="Python Day 1 (1/100)"></a>Python Day 1 (1/100)</h1><h2 id="初识-Python"><a href="#初识-Python" class="headerlink" title="初识 Python"></a>初识 Python</h2><h3 id="Python优缺点"><a href="#Python优缺点" class="headerlink" title="Python优缺点"></a>Python优缺点</h3><h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><h5 id="emsp-emsp-简单，开源，可移植，框架很多"><a href="#emsp-emsp-简单，开源，可移植，框架很多" class="headerlink" title="&emsp;&emsp;简单，开源，可移植，框架很多"></a>&emsp;&emsp;简单，开源，可移植，框架很多</h5><h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h5><h5 id="emsp-emsp-执行效率低下"><a href="#emsp-emsp-执行效率低下" class="headerlink" title="&emsp;&emsp;执行效率低下"></a>&emsp;&emsp;执行效率低下</h5><h3 id="Python-应用领域"><a href="#Python-应用领域" class="headerlink" title="Python 应用领域"></a>Python 应用领域</h3><h5 id="emsp-emsp-Python应用领域非常广泛例如爬虫，Web，数据分析，数据可视化等等。"><a href="#emsp-emsp-Python应用领域非常广泛例如爬虫，Web，数据分析，数据可视化等等。" class="headerlink" title="&emsp;&emsp;Python应用领域非常广泛例如爬虫，Web，数据分析，数据可视化等等。"></a>&emsp;&emsp;Python应用领域非常广泛例如爬虫，Web，数据分析，数据可视化等等。</h5><h3 id="Python-编辑器"><a href="#Python-编辑器" class="headerlink" title="Python 编辑器"></a>Python 编辑器</h3><h5 id="emsp-emsp-IDEA编辑器-File-Setiing-Plugins-安装python编译器"><a href="#emsp-emsp-IDEA编辑器-File-Setiing-Plugins-安装python编译器" class="headerlink" title="&emsp;&emsp;IDEA编辑器 File-Setiing-Plugins 安装python编译器"></a>&emsp;&emsp;IDEA编辑器 File-Setiing-Plugins 安装python编译器</h5><h3 id="Pyhon之禅"><a href="#Pyhon之禅" class="headerlink" title="Pyhon之禅"></a>Pyhon之禅</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> this</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">运行结果：</span><br><span class="line">The Zen of Python, by Tim Peters</span><br><span class="line"></span><br><span class="line">Beautiful is better than ugly.</span><br><span class="line">Explicit is better than implicit.</span><br><span class="line">Simple is better than complex.</span><br><span class="line">Complex is better than complicated.</span><br><span class="line">Flat is better than nested.</span><br><span class="line">Sparse is better than dense.</span><br><span class="line">Readability counts.</span><br><span class="line">Special cases aren&#39;t special enough to break the rules.</span><br><span class="line">Although practicality beats purity.</span><br><span class="line">Errors should never pass silently.</span><br><span class="line">Unless explicitly silenced.</span><br><span class="line">In the face of ambiguity, refuse the temptation to guess.</span><br><span class="line">There should be one-- and preferably only one --obvious way to do it.</span><br><span class="line">Although that way may not be obvious at first unless you&#39;re Dutch.</span><br><span class="line">Now is better than never.</span><br><span class="line">Although never is often better than *right* now.</span><br><span class="line">If the implementation is hard to explain, it&#39;s a bad idea.</span><br><span class="line">If the implementation is easy to explain, it may be a good idea.</span><br><span class="line">Namespaces are one honking great idea -- let&#39;s do more of those!</span><br></pre></td></tr></table></figure>
-
-<h5 id="翻译过来就是："><a href="#翻译过来就是：" class="headerlink" title="翻译过来就是："></a>翻译过来就是：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">提姆·彼得斯（Tim Peters）撰写的《Python之禅》</span><br><span class="line">美丽胜于丑陋。</span><br><span class="line">显式胜于隐式。</span><br><span class="line">简单胜于复杂。</span><br><span class="line">复杂胜于复杂。</span><br><span class="line">扁平比嵌套更好。</span><br><span class="line">稀疏胜于密集。</span><br><span class="line">可读性很重要。</span><br><span class="line">特殊情况还不足以打破规则。</span><br><span class="line">尽管实用性胜过纯度。</span><br><span class="line">错误绝不能默默传递。</span><br><span class="line">除非明确地保持沉默。</span><br><span class="line">面对模棱两可的想法，拒绝猜测的诱惑。</span><br><span class="line">应该有一种-最好只有一种-显而易见的方法。</span><br><span class="line">尽管除非您是荷兰人，否则一开始这种方式可能并不明显。</span><br><span class="line">现在总比没有好。</span><br><span class="line">尽管从来没有比现在“正确”好。</span><br><span class="line">如果实现难以解释，那是个坏主意。</span><br><span class="line">如果实现易于解释，则可能是个好主意。</span><br><span class="line">命名空间是一个很棒的主意-让我们做更多这些吧！</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/01/Python-Day-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Markdown教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1307,10 +324,154 @@
 
 
   
+    <article id="post-My-Fisrt-Blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/28/My-Fisrt-Blog/">My Fisrt Blog</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/28/My-Fisrt-Blog/" class="archive-article-date">
+  	<time datetime="2020-02-28T08:21:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h2><pre><code>查看版本node -v</code></pre><hr>
+<h2 id="2-安装cnpm"><a href="#2-安装cnpm" class="headerlink" title="2.安装cnpm"></a>2.安装cnpm</h2><pre><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></pre><hr>
+<h2 id="3-安装hexo-cli"><a href="#3-安装hexo-cli" class="headerlink" title="3.安装hexo-cli"></a>3.安装hexo-cli</h2><pre><code>cnpm install -g hexo-cli</code></pre><hr>
+<h2 id="4-生成-hexo-init"><a href="#4-生成-hexo-init" class="headerlink" title="4.生成 hexo init"></a>4.生成 hexo init</h2><hr>
+<h2 id="5-生成-hexo-s"><a href="#5-生成-hexo-s" class="headerlink" title="5.生成 hexo s"></a>5.生成 hexo s</h2><hr>
+<h2 id="6-新建-hexo-n-“name”语法：markdown"><a href="#6-新建-hexo-n-“name”语法：markdown" class="headerlink" title="6.新建 hexo n “name”语法：markdown"></a>6.新建 hexo n “name”语法：markdown</h2><hr>
+<h2 id="7-cnpm-install-–save-hexo-deployer-git"><a href="#7-cnpm-install-–save-hexo-deployer-git" class="headerlink" title="7.cnpm install –save hexo-deployer-git"></a>7.cnpm install –save hexo-deployer-git</h2><hr>
+<h2 id="8-设置config"><a href="#8-设置config" class="headerlink" title="8.设置config"></a>8.设置config</h2><pre><code>type: git
+repo: 地址
+branch: master</code></pre><hr>
+<h2 id="9-部署"><a href="#9-部署" class="headerlink" title="9.部署"></a>9.部署</h2><pre><code>hexo d</code></pre><hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/28/My-Fisrt-Blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/28/hello-world/">Hello World</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/28/hello-world/" class="archive-article-date">
+  	<time datetime="2020-02-28T08:08:05.745Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/28/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
