@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Markdown教程 | Hexo</title>
+  <title>Python Day 7 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown教程">
-<meta property="og:url" content="http://yoursite.com/2020/02/29/Markdown%E6%95%99%E7%A8%8B/index.html">
+  <meta name="description" content="文件和异常在python中有内置open函数，我们可以指定文件名，操作模式，编码信息等来操作文件的对象。 文件读取文本为文件时，需要使用open函数指定好带路径的文件名（可以使用相对路径或绝对路径）文件模式设置默认是r，设定encoding字符编码例如（“utf-8”） open(“文件路径”,“文件模式”,&quot;encoding&quot;) 文件模式：    操作模式 具体含义    ‘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Day 7">
+<meta property="og:url" content="http://yoursite.com/2020/03/08/Python-Day-7/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="文件和异常在python中有内置open函数，我们可以指定文件名，操作模式，编码信息等来操作文件的对象。 文件读取文本为文件时，需要使用open函数指定好带路径的文件名（可以使用相对路径或绝对路径）文件模式设置默认是r，设定encoding字符编码例如（“utf-8”） open(“文件路径”,“文件模式”,&quot;encoding&quot;) 文件模式：    操作模式 具体含义    ‘">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-29T05:52:13.079Z">
-<meta property="article:modified_time" content="2020-02-29T09:56:54.568Z">
+<meta property="article:published_time" content="2020-03-08T06:43:03.000Z">
+<meta property="article:modified_time" content="2020-03-08T11:14:48.764Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -120,27 +122,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Markdown教程" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python-Day-7" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Markdown教程
+      Python Day 7
     </h1>
   
 
         
-        <a href="/2020/02/29/Markdown%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-02-29T05:52:13.079Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
+        <a href="/2020/03/08/Python-Day-7/" class="archive-article-date">
+  	<time datetime="2020-03-08T06:43:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="文件和异常"><a href="#文件和异常" class="headerlink" title="文件和异常"></a>文件和异常</h1><p>在python中有内置open函数，我们可以指定文件名，操作模式，编码信息等来操作文件的对象。</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>读取文本为文件时，需要使用<code>open</code>函数指定好带路径的文件名（可以使用相对路径或绝对路径）文件模式设置默认是r，设定<code>encoding</code>字符编码例如（“utf-8”）</p>
+<p><code>open(“文件路径”,“文件模式”,&quot;encoding&quot;)</code></p>
+<p>文件模式：</p>
+<table>
+<thead>
+<tr>
+<th>操作模式</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‘r’</td>
+<td>读取文件（默认）</td>
+</tr>
+<tr>
+<td>‘w’</td>
+<td>写入文件（会截断之前的内容）</td>
+</tr>
+<tr>
+<td>‘x’</td>
+<td>写入，如果文件已经存在则会产生异常</td>
+</tr>
+<tr>
+<td>‘a’</td>
+<td>追加文件，将内容写入到已有文件末尾</td>
+</tr>
+<tr>
+<td>‘b’</td>
+<td>二进制模式</td>
+</tr>
+<tr>
+<td>‘t’</td>
+<td>文本模式（默认）</td>
+</tr>
+<tr>
+<td>‘+’</td>
+<td>更新（可读可写）</td>
+</tr>
+</tbody></table>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>我们可以将运行的代码块放在<code>try</code>中，在<code>try</code>后面跟上一个或者多个<code>except</code>，<code>finally</code>放在最好结束</p>
+<p><code>with</code>关键字会指定的文件对象会在上下文环境，并且在离开上下文环境的时候自动释放资源</p>
+<h3 id="读写文本文件"><a href="#读写文本文件" class="headerlink" title="读写文本文件"></a>读写文本文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'a.txt'</span>,t,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">print(f.read())</span><br><span class="line"><span class="comment">#一次性读取整个文件</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">	print(line,end=<span class="string">' '</span>)</span><br><span class="line">	time.sleep(<span class="number">0.5</span>)</span><br><span class="line"><span class="comment">#通过for-in循环逐行读取</span></span><br><span class="line"></span><br><span class="line">lines = f.readlines()</span><br><span class="line">print(lines)</span><br><span class="line"><span class="comment">#读取文件按行读取到列表中</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="读写二进制文件"><a href="#读写二进制文件" class="headerlink" title="读写二进制文件"></a>读写二进制文件</h3> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"a.jpg"</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> fs1:</span><br><span class="line">data = fs1.read()</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'b.jpg'</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> fs2:</span><br><span class="line">fs2.write(data)</span><br><span class="line"><span class="comment"># 将a图片复制到b</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="读写JSON文件"><a href="#读写JSON文件" class="headerlink" title="读写JSON文件"></a>读写JSON文件</h3><p>需要到第三方库 <code>import json</code> 所谓json文件格式就是所有数据类型都可以兼容，str，int/float，bool，dict，定义的时候和字典定义一样。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">mydict =&#123;</span><br><span class="line"><span class="string">'name'</span>:<span class="string">'wuhao'</span>,</span><br><span class="line"><span class="string">'age'</span>:<span class="number">38</span>,</span><br><span class="line"><span class="string">'friends'</span>:[<span class="string">'wdc'</span>,<span class="string">'wxc'</span>]</span><br><span class="line"><span class="string">'cars'</span>:[</span><br><span class="line">	&#123;<span class="string">'brand'</span>:<span class="string">'aaa'</span>,<span class="string">'ccc'</span>:<span class="number">1800</span>&#125;</span><br><span class="line">	&#123;<span class="string">'brand'</span>:<span class="string">'aaa'</span>,<span class="string">'ccc'</span>:<span class="number">1800</span>&#125;</span><br><span class="line">	&#123;<span class="string">'brand'</span>:<span class="string">'aaa'</span>,<span class="string">'ccc'</span>:<span class="number">1800</span>&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	<span class="keyword">with</span> open(<span class="string">'data.json'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> fs:</span><br><span class="line">		json.dump(mydict,fs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 吧json数据类型保存到文件里面</span></span><br></pre></td></tr></table></figure>
+
+<p><code>json</code>模块主要有四个函数：</p>
+<ul>
+<li><code>dump</code>-将Python对象按章json格式序列存到文件中</li>
+<li><code>dumps</code> - 将Python对象处理成json格式的字符串</li>
+<li><code>load</code> - 将文件中的json数据反序列化成兑现</li>
+<li><code>loads</code> - 将字符串的内容反序列化为Python对象</li>
+</ul>
+<p>序列化：将数据和对象转换成存储和传输的i形式，而且调用的时候会产生副本。反序列化就是与这个相反</p>
+
       
 
       
@@ -198,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/29/Markdown%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/08/Python-Day-7/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -212,18 +271,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/01/Python-Day-1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/09/Python-Day-8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Python Day 1
+          Python Day 8
         
       </div>
     </a>
   
   
-    <a href="/2020/02/28/My-Fisrt-Blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">My Fisrt Blog</div>
+    <a href="/2020/03/07/Python-Day-6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Day 6</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -250,7 +309,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文件和异常"><span class="toc-number">1.</span> <span class="toc-text">文件和异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件"><span class="toc-number">2.</span> <span class="toc-text">文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异常"><span class="toc-number">3.</span> <span class="toc-text">异常</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#读写文本文件"><span class="toc-number">3.0.1.</span> <span class="toc-text">读写文本文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读写二进制文件"><span class="toc-number">3.0.2.</span> <span class="toc-text">读写二进制文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读写JSON文件"><span class="toc-number">3.0.3.</span> <span class="toc-text">读写JSON文件</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
